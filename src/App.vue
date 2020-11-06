@@ -1,0 +1,39 @@
+<!--
+ 1  2 3  
+  2  3 4 
+ 5      6
+  47   5 
+   1    3
+ 7  68   
+3    4 9 
+   6  1 4
+  6      
+-->
+<template>
+  <Grid 
+    sudoku="010020300002003040050000006004700050000100003070068000300004090000600104006000000" 
+    v-bind:width="9" 
+    v-bind:height="9" />
+</template>
+
+<script>
+import Grid from './components/Grid.vue'
+
+export default {
+  name: 'Sudoku',
+  components: {
+    Grid
+  }
+}
+</script>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
