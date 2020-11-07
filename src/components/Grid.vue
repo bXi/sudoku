@@ -72,6 +72,11 @@ export default {
                 modifiers: [],
                 preventDefault: false,
             },
+            {
+                keyCode: 48, 
+                modifiers: [],
+                preventDefault: false,
+            },
         ],
     }),
     methods: {
