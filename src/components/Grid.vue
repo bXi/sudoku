@@ -77,6 +77,56 @@ export default {
                 modifiers: [],
                 preventDefault: false,
             },
+            {
+                keyCode: 97,
+                modifiers: [],
+                preventDefault: false,
+            },
+            {
+                keyCode: 98, 
+                modifiers: [],
+                preventDefault: false,
+            },
+            {
+                keyCode: 99, 
+                modifiers: [],
+                preventDefault: false,
+            },
+            {
+                keyCode: 100,
+                modifiers: [],
+                preventDefault: false,
+            },
+            {
+                keyCode: 101, 
+                modifiers: [],
+                preventDefault: false,
+            },
+            {
+                keyCode: 102, 
+                modifiers: [],
+                preventDefault: false,
+            },
+            {
+                keyCode: 103,
+                modifiers: [],
+                preventDefault: false,
+            },
+            {
+                keyCode: 104, 
+                modifiers: [],
+                preventDefault: false,
+            },
+            {
+                keyCode: 105, 
+                modifiers: [],
+                preventDefault: false,
+            },
+            {
+                keyCode: 96, 
+                modifiers: [],
+                preventDefault: false,
+            },
         ],
     }),
     methods: {
