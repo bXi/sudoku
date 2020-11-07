@@ -30,25 +30,3 @@ export default {
     },
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-* {
-    margin: 0;
-    padding: 0;
-}
-.grid li {
-    list-style: none;
-}
-.grid > ul {
-    display: inline-flex;
-    border: 1px solid #000;
-}
-
-
-.grid span {
-    margin: 0 auto;
-}
-
-
-</style>
