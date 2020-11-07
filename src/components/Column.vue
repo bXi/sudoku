@@ -2,7 +2,6 @@
     <li v-for="x in height" 
         v-bind:key="x">
         <Cell 
-            v-bind:sudoku="sudoku"
             v-bind:width="width"
             v-bind:height="height"
             v-bind:x="x"
@@ -21,7 +20,6 @@ export default {
         Cell,
     },
     props: {
-        sudoku: String,
         x: Number,
         y: Number,
         width: Number,

@@ -11,25 +11,19 @@
 
 <script>
 
-import mitt from 'mitt'
-
-const emitter = mitt()
-
-
-
-
 export default {
     name: 'Cell',
     mounted() {
-        emitter.on('deactivate', position => this.deactivate(position) );
+        this.emitter.on('deactivate', position => this.deactivate(position) );
+        this.emitter.on('enterNumber', number => this.enterNumber(number) );
     },
     methods: {
         charAt: function(x, y) {
-            var char = this.sudoku.substr(((x-1)*this.width + (y-1)), 1);
-            return (char == '0') ? '' : char
+            this.char = this.sudoku.substr(((x-1)*this.width + (y-1)), 1);
+            return (this.char == '0') ? '' : this.char
         },
         activateCell: function() {
-            emitter.emit('deactivate', [this.x, this.y, this.isActive]);
+            this.emitter.emit('deactivate', [this.x, this.y, this.isActive]);
             this.isActive = !this.isActive;
         },
         deactivate: function(position) {
@@ -37,13 +31,10 @@ export default {
             this.isSameRow = false;
             this.isSameCol = false;
             
-
-            if (!position[2] && (Math.ceil(position[0] / 3) == Math.ceil(this.x / 3) && Math.ceil(position[1] / 3) == Math.ceil(this.y / 3))) {
+            if (!position[2] && (Math.ceil(position[0] / 3) == Math.ceil(this.x / 3) && 
+                                 Math.ceil(position[1] / 3) == Math.ceil(this.y / 3))) {
                 this.isSameBox = true;
             }
-
-
-
 
             if (!position[2] && position[0] == this.x) {
                 this.isSameRow = true;
@@ -59,13 +50,16 @@ export default {
 
         },
         enterNumber: function(data) {
+            
             if (this.isActive) {
-                data
+                var index = (this.x-1)*this.width + (this.y-1);
+
+                this.sudoku = this.sudoku.substring(0, index) + data[0] + this.sudoku.substring(index + 1);
+                this.$forceUpdate();
             }
         },
     },
     props: {
-        sudoku: String,
         x: Number,
         y: Number,
         width: Number,
@@ -73,6 +67,8 @@ export default {
     },
     data() {
         return {
+            char: '',
+            isStatic: false,
             isActive: false,
             isSameBox: false,
             isSameRow: false,
