@@ -10,7 +10,6 @@
   "dependencies": {
     "core-js": "^3.7.0",
     "mitt": "^2.1.0",
-    "sudoku": "0.0.3",
     "vue": "^3.0.0",
     "vue-keypress": "^2.1.1"
   },

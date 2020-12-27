@@ -13,10 +13,11 @@
             </li>
         </ul>
     </div>
+        <span class="currentstring">{{ getSudokuString() }}</span>
+
 </template>
 
 <script>
-
 import Column from './Column.vue'
 import Keypress from 'vue-keypress'
 export default {
@@ -132,7 +133,10 @@ export default {
     methods: {
        enterNumber: function(number) {
             this.emitter.emit('enterNumber', [number.event.key]);
-       }, 
+       },
+       getSudokuString: function() {
+           return this.sudoku;
+       },
     },
 
     props: {
@@ -141,3 +145,18 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+    .currentstring {
+        font-size:0.8em;
+        text-align: center;
+        width: 100%;
+        display: block;
+        position: fixed;
+        bottom: 10px;
+        color: #ddd;
+    }
+    .currentstring:hover {
+        color: #888;
+    }
+</style>
